@@ -1,20 +1,21 @@
-import { auth } from '@/auth';
-import StartUpForm from '@/components/StartupForm';
-import { redirect } from 'next/navigation';
-import React from 'react';
+import StartupForm from "@/components/StartupForm";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 
 const Page = async () => {
-    const session = await auth();
+  const session = await auth();
 
-    if(!session) redirect("/");
+  if (!session) redirect("/");
 
-    return <>
-        <section className="pink_container !min-h-[230px]">
-            <h1 className="heading">Submit your Startup</h1>
-        </section>
+  return (
+    <>
+      <section className="pink_container !min-h-[230px]">
+        <h1 className="heading">Submit Your Startup</h1>
+      </section>
 
-        <StartUpForm />    
-    </>;
-}
+      <StartupForm />
+    </>
+  );
+};
 
 export default Page;
